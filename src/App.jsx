@@ -460,7 +460,7 @@ function App() {
           >
 
             <div className="flex justify-between text-xs tracking-[.2em] text-white/35">
-              <span>PROFILE / 2026</span>
+              <span>PROFILE / 2027</span>
               <Database className="h-5 w-5 text-cyan-300" />
             </div>
 
@@ -479,7 +479,8 @@ function App() {
               <h2 className="mt-2 text-3xl font-medium">
                 Business Intelligence
                 <br />
-                &amp; Academic Data
+                &amp; Data Analytics
+                Power BI · SQL · Data Strategy · AI-assisted Analytics
               </h2>
 
             </div>

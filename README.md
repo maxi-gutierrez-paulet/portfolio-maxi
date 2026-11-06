@@ -1,5 +1,5 @@
 # Portfolio Maxi
-Portfolio profesional de Maximiliano Gutierrez Paulet.
+Portfolio profesional de Maxi Gutierrez Paulet.
 
 ## Desarrollo local
 npm install

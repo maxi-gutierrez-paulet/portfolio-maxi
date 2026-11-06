@@ -273,122 +273,123 @@ function App() {
       </div>
 
       {/* Navegación */}
-      <nav className="fixed left-0 right-0 top-1 z-50 border-b border-white/5 bg-[#05070b]/75 backdrop-blur-xl">
-
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-
-          <button
-            onClick={() => go("inicio")}
-            className="text-sm font-bold tracking-[.3em]"
-          >
-            MAXI
-            <span className="text-cyan-300">.</span>
-          </button>
-
-          <div className="hidden gap-8 md:flex">
-            {nav.map(([name, id]) => (
-              <button
-                key={id}
-                onClick={() => go(id)}
-                className="text-sm text-white/55 transition hover:text-cyan-300"
-              >
-                {name}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3">
-
-  {/* Selector de idioma */}
-<div className="flex items-center gap-3">
-
-  {/* Selector de idioma */}
-  <div className="flex items-center rounded-full border border-white/10 bg-white/[.04] p-1">
-    <button
-      type="button"
-      onClick={() => setLanguage("es")}
-      className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
-        language === "es"
-          ? "bg-cyan-300 text-black"
-          : "text-white/45 hover:text-white"
-      }`}
-      aria-label="Mostrar la página en español"
-    >
-      ES
-    </button>
-
-    <button
-      type="button"
-      onClick={() => setLanguage("en")}
-      className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
-        language === "en"
-          ? "bg-cyan-300 text-black"
-          : "text-white/45 hover:text-white"
-      }`}
-      aria-label="Show the page in English"
-    >
-      EN
-    </button>
-  </div>
-
-  {/* LinkedIn */}
-  <a
-    href={LINKEDIN}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-cyan-200 sm:block"
-  >
-    LinkedIn ↗
-  </a>
-
-  {/* Menú móvil */}
-  <button
-    type="button"
-    className="rounded-full border border-white/10 p-2 md:hidden"
-    onClick={() => setMenu(!menu)}
-    aria-label={menu ? "Cerrar menú" : "Abrir menú"}
-  >
-    {menu ? <X /> : <Menu />}
-  </button>
-
-</div>
-
-        <AnimatePresence>
-          {menu && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden border-t border-white/5 bg-[#05070b]"
+        <nav className="fixed left-0 right-0 top-1 z-50 border-b border-white/5 bg-[#05070b]/75 backdrop-blur-xl">
+          <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+        
+            {/* Logo */}
+            <button
+              type="button"
+              onClick={() => go("inicio")}
+              className="text-sm font-bold tracking-[.3em]"
             >
-              <div className="grid gap-5 p-6">
-
-                {nav.map(([name, id]) => (
-                  <button
-                    key={id}
-                    onClick={() => go(id)}
-                    className="text-left text-white/70"
-                  >
-                    {name}
-                  </button>
-                ))}
-
-                <a
-                  href={LINKEDIN}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-left text-cyan-300"
+              MAXI
+              <span className="text-cyan-300">.</span>
+            </button>
+        
+            {/* Navegación de escritorio */}
+            <div className="hidden gap-8 md:flex">
+              {nav.map(([name, id]) => (
+                <button
+                  type="button"
+                  key={id}
+                  onClick={() => go(id)}
+                  className="text-sm text-white/55 transition hover:text-cyan-300"
                 >
-                  LinkedIn ↗
-                </a>
-
+                  {name}
+                </button>
+              ))}
+            </div>
+        
+            {/* Acciones de cabecera */}
+            <div className="flex items-center gap-3">
+        
+              {/* Selector de idioma */}
+              <div className="flex items-center rounded-full border border-white/10 bg-white/[.04] p-1">
+                <button
+                  type="button"
+                  onClick={() => setLanguage("es")}
+                  className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                    language === "es"
+                      ? "bg-cyan-300 text-black"
+                      : "text-white/50 hover:text-white"
+                  }`}
+                  aria-label="Mostrar la página en español"
+                >
+                  ES
+                </button>
+        
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                    language === "en"
+                      ? "bg-cyan-300 text-black"
+                      : "text-white/50 hover:text-white"
+                  }`}
+                  aria-label="Show the page in English"
+                >
+                  EN
+                </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-      </nav>
-
+        
+              {/* LinkedIn */}
+              <a
+                href={LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-cyan-200 sm:block"
+              >
+                LinkedIn ↗
+              </a>
+        
+              {/* Botón móvil */}
+              <button
+                type="button"
+                className="rounded-full border border-white/10 p-2 md:hidden"
+                onClick={() => setMenu(!menu)}
+                aria-label={menu ? "Cerrar menú" : "Abrir menú"}
+              >
+                {menu ? <X /> : <Menu />}
+              </button>
+        
+            </div>
+          </div>
+        
+          {/* Menú móvil desplegable */}
+          <AnimatePresence>
+            {menu && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="overflow-hidden border-t border-white/5 bg-[#05070b]"
+              >
+                <div className="grid gap-5 p-6">
+                  {nav.map(([name, id]) => (
+                    <button
+                      type="button"
+                      key={id}
+                      onClick={() => go(id)}
+                      className="text-left text-white/70"
+                    >
+                      {name}
+                    </button>
+                  ))}
+        
+                  <a
+                    href={LINKEDIN}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-left text-cyan-300"
+                  >
+                    LinkedIn ↗
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </nav>
+      
       {/* PORTADA */}
       <section
         id="inicio"

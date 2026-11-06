@@ -474,13 +474,14 @@ function App() {
 
               <p className="text-sm text-white/40">
                 Data Analyst Senior
+                <br />
+                Power BI · SQL · Data Strategy · AI-assisted Analytics
               </p>
 
               <h2 className="mt-2 text-3xl font-medium">
                 Business Intelligence
                 <br />
                 &amp; Data Analytics
-                Power BI · SQL · Data Strategy · AI-assisted Analytics
               </h2>
 
             </div>

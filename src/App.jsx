@@ -92,16 +92,49 @@ const experience = [
 ];
 
 const education = [
-  [
-    "Grado en Desarrollo de Aplicaciones Web",
-    "Universidad Alfonso X el Sabio · 2025",
-  ],
-  ["Grado en Desarrollo de Aplicaciones Multiplataforma", "CEEP"],
-  ["Grado en Administración y Finanzas", "CEEP"],
-  ["Máster en Innovación Disruptiva", "ALITER"],
-  ["Máster Power Digital Marketing", "ThePower Business School"],
+  {
+    title: "Grado Superior en Desarrollo de Aplicaciones Web",
+    institution: "Universidad Alfonso X el Sabio",
+    period: "Sept. 2024 · Jul. 2025",
+    area: "Desarrollo web · Computer Science",
+    skills: "HTML, CSS, JavaScript, PHP, bases de datos y experiencia de usuario",
+  },
+  {
+    title: "Grado Superior en Desarrollo de Aplicaciones Multiplataforma",
+    institution: "CEEP Centro Europeo de Estudios Profesionales",
+    period: "Sept. 2020 · Jul. 2022",
+    area: "Computer Software Engineering",
+    skills: "Android, Java, bases de datos y entornos de desarrollo",
+  },
+  {
+    title: "Grado Superior en Administración y Finanzas",
+    institution: "CEEP Centro Europeo de Estudios Profesionales",
+    period: "1995 · 1998",
+    area: "Business Administration, Management and Operations",
+    skills: "Contabilidad, administración, finanzas y gestión empresarial",
+  },
+  {
+    title: "Máster ThePowerMBA + Digital Marketing",
+    institution: "thePower",
+    period: "Jul. 2022 · Actualidad",
+    area: "Marketing y gestión empresarial",
+    skills: "Marketing digital, estrategia, analítica y dirección de negocio",
+  },
+  {
+    title: "Máster en Innovación Disruptiva",
+    institution: "ALITER Escuela Internacional de Negocios Digitales",
+    period: "2012 · 2013",
+    area: "Innovación",
+    skills: "Innovación, transformación y economía",
+  },
+  {
+    title: "Máster en Gestión de Pymes",
+    institution: "IE Business School",
+    period: "2000 · 2002",
+    area: "Gestión empresarial",
+    skills: "Dirección, economía y gestión de pequeñas y medianas empresas",
+  },
 ];
-
 const skillGroups = [
   {
     title: "Business Intelligence",
@@ -701,29 +734,45 @@ function App() {
 
         <div className="mt-9 grid gap-3 sm:grid-cols-2">
 
-          {education.map(([title, place]) => (
-            <div
-              key={title}
-              className="flex gap-4 rounded-2xl border border-white/10 bg-white/[.025] p-5"
-            >
+   {education.map((item, index) => (
+  <motion.div
+    key={item.title}
+    initial={{ opacity: 0, y: 15 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay: index * 0.06 }}
+    whileHover={{ y: -4 }}
+    className="group rounded-[24px] border border-white/10 bg-gradient-to-br from-white/[.06] to-white/[.015] p-6 transition hover:border-cyan-300/25"
+  >
+    <div className="flex items-start gap-4">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10">
+        <GraduationCap className="h-5 w-5 text-cyan-300" />
+      </div>
 
-              <GraduationCap className="h-5 w-5 shrink-0 text-cyan-300" />
+      <div className="min-w-0">
+        <p className="text-xs font-medium uppercase tracking-[.16em] text-cyan-300/70">
+          {item.period}
+        </p>
 
-              <div>
+        <h3 className="mt-3 text-lg font-medium leading-6 text-white">
+          {item.title}
+        </h3>
 
-                <p className="font-medium">
-                  {title}
-                </p>
+        <p className="mt-2 text-sm font-medium text-white/55">
+          {item.institution}
+        </p>
 
-                <p className="mt-1 text-sm text-white/40">
-                  {place}
-                </p>
+        <p className="mt-4 text-sm text-white/40">
+          {item.area}
+        </p>
 
-              </div>
-
-            </div>
-          ))}
-
+        <p className="mt-2 text-sm leading-6 text-white/35">
+          {item.skills}
+        </p>
+      </div>
+    </div>
+  </motion.div>
+))}
         </div>
 
       </section>

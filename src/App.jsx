@@ -300,20 +300,58 @@ function App() {
           <div className="flex items-center gap-3">
 
   {/* Selector de idioma */}
+<div className="flex items-center gap-3">
+
+  {/* Selector de idioma */}
   <div className="flex items-center rounded-full border border-white/10 bg-white/[.04] p-1">
-    ...
+    <button
+      type="button"
+      onClick={() => setLanguage("es")}
+      className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+        language === "es"
+          ? "bg-cyan-300 text-black"
+          : "text-white/45 hover:text-white"
+      }`}
+      aria-label="Mostrar la página en español"
+    >
+      ES
+    </button>
+
+    <button
+      type="button"
+      onClick={() => setLanguage("en")}
+      className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+        language === "en"
+          ? "bg-cyan-300 text-black"
+          : "text-white/45 hover:text-white"
+      }`}
+      aria-label="Show the page in English"
+    >
+      EN
+    </button>
   </div>
 
   {/* LinkedIn */}
-  {LINKEDIN}
+  <a
+    href={LINKEDIN}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-cyan-200 sm:block"
+  >
     LinkedIn ↗
   </a>
 
   {/* Menú móvil */}
-  <button ...>
-          </div>
+  <button
+    type="button"
+    className="rounded-full border border-white/10 p-2 md:hidden"
+    onClick={() => setMenu(!menu)}
+    aria-label={menu ? "Cerrar menú" : "Abrir menú"}
+  >
+    {menu ? <X /> : <Menu />}
+  </button>
 
-        </div>
+</div>
 
         <AnimatePresence>
           {menu && (

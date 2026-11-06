@@ -182,6 +182,7 @@ function App() {
   const [selected, setSelected] = useState(0);
   const [menu, setMenu] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [language, setLanguage] = useState("es");
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -298,23 +299,18 @@ function App() {
 
           <div className="flex items-center gap-3">
 
-            <a
-              href={LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-cyan-200 sm:block"
-            >
-              LinkedIn ↗
-            </a>
+  {/* Selector de idioma */}
+  <div className="flex items-center rounded-full border border-white/10 bg-white/[.04] p-1">
+    ...
+  </div>
 
-            <button
-              className="rounded-full border border-white/10 p-2 md:hidden"
-              onClick={() => setMenu(!menu)}
-              aria-label="Abrir menú"
-            >
-              {menu ? <X /> : <Menu />}
-            </button>
+  {/* LinkedIn */}
+  {LINKEDIN}
+    LinkedIn ↗
+  </a>
 
+  {/* Menú móvil */}
+  <button ...>
           </div>
 
         </div>

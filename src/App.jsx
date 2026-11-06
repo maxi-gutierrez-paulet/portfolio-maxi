@@ -471,19 +471,18 @@ function App() {
             </div>
 
             <div className="mt-8">
-
-              <p className="text-sm text-white/40">
-                Data Analyst Senior
-                <br />
-                Power BI · SQL · Data Strategy · AI-assisted Analytics
-              </p>
-
+              
               <h2 className="mt-2 text-3xl font-medium">
                 Business Intelligence
                 <br />
                 &amp; Data Analytics
               </h2>
-
+              <p className="text-sm text-white/40">
+                Data Analyst Senior
+                <br />
+                Power BI · SQL · Data Strategy · AI-assisted Analytics
+              </p>
+            
             </div>
 
             <div className="mt-8 grid grid-cols-3 gap-2">

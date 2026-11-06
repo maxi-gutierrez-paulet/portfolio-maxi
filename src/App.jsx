@@ -139,12 +139,11 @@ const education = [
     title: "Business Intelligence",
     items: [
       "Power BI",
-      "DAX avanzado",
+      "DAX",
       "Microsoft Fabric",
       "MicroStrategy",
       "Snowflake",
-      "Tableau",
-    ],
+     ],
   },
   {
     title: "Datos y modelado",

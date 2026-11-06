@@ -384,7 +384,7 @@ function App() {
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/55">
             Soy{" "}
             <strong className="font-medium text-white">
-              Maximiliano Gutiérrez Paulet
+              Maxi Gutiérrez Paulet
             </strong>
             , Data Analyst Senior especializado en inteligencia de datos
             académicos, Power BI y transformación de información en valor

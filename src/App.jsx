@@ -134,8 +134,7 @@ const education = [
     area: "Gestión empresarial",
     skills: "Dirección, economía y gestión de pequeñas y medianas empresas",
   },
-];
-const skillGroups = [
+];const skillGroups = [
   {
     title: "Business Intelligence",
     items: [
@@ -734,7 +733,7 @@ function App() {
 
         <div className="mt-9 grid gap-3 sm:grid-cols-2">
 
-   {education.map((item, index) => (
+{education.map((item, index) => (
   <motion.div
     key={item.title}
     initial={{ opacity: 0, y: 15 }}

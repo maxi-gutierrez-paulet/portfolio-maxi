@@ -386,8 +386,7 @@ function App() {
             <strong className="font-medium text-white">
               Maxi Gutiérrez Paulet
             </strong>
-            , Data Analyst Senior especializado en inteligencia de datos
-            académicos, Power BI y transformación de información en valor
+            , Data Analyst Senior especializado en inteligencia de datos, Power BI y transformación de información en valor
             para el negocio.
           </p>
 
@@ -477,6 +476,7 @@ function App() {
                 <br />
                 &amp; Data Analytics
               </h2>
+              <br />
               <p className="text-sm text-white/40">
                 Data Analyst Senior
                 <br />
@@ -803,11 +803,20 @@ function App() {
               href={LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/20 bg-black/10 px-6 py-3 transition hover:bg-white/10"
+              className="flex items-center gap-2 rounded-full border border-white/20 bg-black/10 px-6 py-3 transition hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10"
             >
-              LinkedIn ↗
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-4 w-4 fill-[#0A66C2]"
+                aria-hidden="true"
+              >
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.047c.475-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9H7.12v11.452z" />
+              </svg>
+            
+              <span>LinkedIn ↗</span>
             </a>
-
+            
           </div>
 
         </div>

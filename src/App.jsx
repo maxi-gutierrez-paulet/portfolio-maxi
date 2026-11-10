@@ -113,7 +113,56 @@ const content = {
     ]
   }
 };
-
+    const featuredCertifications = [
+      {
+        title: "Microsoft Power BI Desktop - El Bootcamp práctico",
+        issuer: "Nikolai Schuler",
+        date: "Abr. 2026",
+        category: "Power BI",
+      },
+      {
+        title: "Fundamentos de modelado de datos tabular en Power BI (PL-300)",
+        issuer: "LinkedIn",
+        date: "Oct. 2025",
+        category: "Data & BI",
+      },
+      {
+        title: "Visualizar y analizar datos en Power BI (PL-300)",
+        issuer: "LinkedIn",
+        date: "Oct. 2025",
+        category: "Data & BI",
+      },
+      {
+        title: "FCT032PO - Data Mining Business Intelligence",
+        issuer: "Femxa",
+        date: "Abr. 2022",
+        category: "Data & BI",
+      },
+      {
+        title: "IFC304_3 - Sistemas de Gestión de Información",
+        issuer: "Consejería de Economía, Hacienda y Empleo",
+        date: "Mar. 2023",
+        category: "Tecnología",
+      },
+      {
+        title: "Data Storytelling",
+        issuer: "Randstad",
+        date: "Jun. 2023",
+        category: "Data",
+      },
+      {
+        title: "Gestión de proyectos e historias de usuario con Jira",
+        issuer: "Coursera",
+        date: "Jul. 2026",
+        category: "Agile",
+      },
+      {
+        title: "ADGD347PO Programa Avanzado Agile Project Management",
+        issuer: "Femxa",
+        date: "Feb. 2023",
+        category: "Agile",
+      },
+    ];
 function App() {
   const [selected, setSelected] = useState(0);
   const [menu, setMenu] = useState(false);
@@ -213,6 +262,142 @@ function App() {
 
       <section id="formacion" className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10"><p className="text-xs tracking-[.25em] text-cyan-300">{t.educationLabel}</p><h2 className="mt-4 text-4xl font-semibold">{t.educationTitle}</h2><div className="mt-9 grid gap-3 sm:grid-cols-2">{t.education.map((item, index) => <motion.div key={item.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.06 }} whileHover={{ y: -4 }} className="group rounded-[24px] border border-white/10 bg-gradient-to-br from-white/[.06] to-white/[.015] p-6 transition hover:border-cyan-300/25"><div className="flex items-start gap-4"><div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10"><GraduationCap className="h-5 w-5 text-cyan-300" /></div><div className="min-w-0"><p className="text-xs font-medium uppercase tracking-[.16em] text-cyan-300/70">{item.period}</p><h3 className="mt-3 text-lg font-medium leading-6 text-white">{item.title}</h3><p className="mt-2 text-sm font-medium text-white/55">{item.institution}</p><p className="mt-4 text-sm text-white/40">{item.area}</p><p className="mt-2 text-sm leading-6 text-white/35">{item.skills}</p></div></div></motion.div>)}</div></section>
 
+      <section
+        id="certificaciones"
+        className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10"
+      >
+        <p className="text-xs tracking-[.25em] text-cyan-300">
+          {t.certificationsLabel}
+        </p>
+      
+        <div className="mt-4 grid gap-10 lg:grid-cols-[.65fr_1.35fr]">
+      
+          {/* Número principal */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative flex h-64 w-64 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/[.04]"
+            >
+              <div className="absolute inset-5 rounded-full border border-cyan-300/10" />
+      
+              <div className="absolute inset-10 rounded-full border border-dashed border-cyan-300/20" />
+      
+              <div className="relative text-center">
+                <div className="text-7xl font-semibold tracking-[-.06em] text-cyan-300">
+                  {t.certificationsCount}
+                </div>
+      
+                <div className="mt-2 text-xs uppercase tracking-[.25em] text-white/40">
+                  {t.certificationsCountLabel}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+      
+          {/* Presentación */}
+          <div>
+            <h2 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              {t.certificationsTitle}
+            </h2>
+      
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/50">
+              {t.certificationsIntro}
+            </p>
+      
+            <div className="mt-8 flex flex-wrap gap-2">
+              {[
+                "Data & BI",
+                "Power BI",
+                "Technology",
+                "Agile",
+                "Marketing",
+                "Leadership",
+              ].map((category) => (
+                <span
+                  key={category}
+                  className="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm text-white/55"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      
+        {/* Destacadas */}
+        <div className="mt-16">
+      
+          <div className="mb-7 flex items-center gap-3">
+            <Award className="h-5 w-5 text-cyan-300" />
+      
+            <h3 className="text-xl font-medium">
+              {t.certificationsFeatured}
+            </h3>
+          </div>
+      
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {featuredCertifications.map((certification, index) => (
+              <motion.div
+                key={certification.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.05,
+                }}
+                whileHover={{ y: -6 }}
+                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-br from-white/[.065] to-white/[.015] p-6 transition hover:border-cyan-300/30"
+              >
+                <div className="absolute right-5 top-5">
+                  <BadgeCheck className="h-5 w-5 text-cyan-300/60" />
+                </div>
+      
+                <p className="text-xs uppercase tracking-[.18em] text-cyan-300/60">
+                  {certification.category}
+                </p>
+      
+                <h4 className="mt-8 min-h-[72px] text-base font-medium leading-6 text-white/90">
+                  {certification.title}
+                </h4>
+      
+                <div className="mt-7 border-t border-white/10 pt-4">
+                  <p className="text-sm text-white/45">
+                    {certification.issuer}
+                  </p>
+      
+                  <p className="mt-1 text-xs text-white/25">
+                    {certification.date}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      
+        {/* Botón ver todas */}
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() =>
+              setShowAllCertifications(!showAllCertifications)
+            }
+            className="flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[.06] px-6 py-3 text-sm font-medium text-cyan-200 transition hover:bg-cyan-300/10"
+          >
+            {showAllCertifications
+              ? t.certificationsShowLess
+              : t.certificationsShowAll}
+      
+            {showAllCertifications ? (
+              <ChevronUp className="h-4 w-4" />
+            ) : (
+              <ChevronDown className="h-4 w-4" />
+            )}
+          </button>
+        </div>
+      </section>
       <section className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-10"><div className="rounded-[36px] border border-cyan-300/15 bg-gradient-to-r from-cyan-300/15 via-blue-500/10 to-violet-500/15 p-9 sm:p-14"><p className="text-sm text-cyan-200">{t.talk}</p><h2 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">{t.contactTitle}</h2><div className="mt-8 flex flex-wrap gap-3"><a href={`mailto:${EMAIL}`} className="flex items-center rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-cyan-200"><Mail className="mr-2 h-4 w-4" />{t.contact}</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-full border border-white/20 bg-black/10 px-6 py-3 transition hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-4 w-4 fill-[#0A66C2]" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.047c.475-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9H7.12v11.452z" /></svg><span>LinkedIn ↗</span></a></div></div></section>
 
       <footer className="relative z-10 border-t border-white/10"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-6 py-9 text-sm text-white/30 sm:flex-row lg:px-10"><span>© 2026 Maximiliano Gutiérrez Paulet</span><div className="flex gap-5"><a href={`mailto:${EMAIL}`} className="transition hover:text-white">Email</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">LinkedIn</a></div></div></footer>

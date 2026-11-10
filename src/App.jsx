@@ -625,95 +625,99 @@ function App() {
           </div>
         </div>
 
-            <AnimatePresence>
-      {showAllCertifications && (
+              {showAllCertifications && (
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.5 }}
-          className="overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mt-10 border-t border-white/10 pt-10"
         >
-          <div className="mt-6 border-t border-white/10 pt-10">
-    
-            <div className="mb-8 flex items-center justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[.2em] text-cyan-300/60">
-                  Portfolio de aprendizaje
-                </p>
-    
-                <h3 className="mt-2 text-2xl font-medium">
-                  Todas las credenciales
-                </h3>
-              </div>
-    
-              <div className="hidden text-right sm:block">
-                <span className="text-3xl font-semibold text-cyan-300">
-                  49
-                </span>
-    
-                <p className="text-xs text-white/30">
-                  total
-                </p>
-              </div>
+          <div className="mb-8 flex items-center justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[.2em] text-cyan-300/60">
+                {language === "es"
+                  ? "Portfolio de aprendizaje"
+                  : "Learning portfolio"}
+              </p>
+      
+              <h3 className="mt-2 text-2xl font-medium">
+                {language === "es"
+                  ? "Todas las credenciales"
+                  : "All credentials"}
+              </h3>
+      
+              <p className="mt-2 text-sm text-white/35">
+                {language === "es"
+                  ? "41 credenciales adicionales, además de las 8 destacadas."
+                  : "41 additional credentials, plus the 8 featured credentials."}
+              </p>
             </div>
-    
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {additionalCertifications.map(
-                (certification, index) => (
-                  <motion.div
-                    key={certification.title}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: Math.min(index * 0.02, 0.4),
-                    }}
-                    className="flex min-h-[150px] flex-col justify-between rounded-[20px] border border-white/[.07] bg-white/[.025] p-5 transition hover:border-cyan-300/20 hover:bg-white/[.04]"
-                  >
-                    <div>
-                      <div className="flex items-start justify-between gap-3">
-                        <span className="text-[10px] uppercase tracking-[.18em] text-cyan-300/55">
-                          {certification.category}
-                        </span>
-    
-                        <BadgeCheck className="h-4 w-4 shrink-0 text-white/20" />
-                      </div>
-    
-                      <h4 className="mt-4 text-sm font-medium leading-5 text-white/75">
-                        {certification.title}
-                      </h4>
-                    </div>
-    
-                    <div className="mt-5 flex items-end justify-between gap-3 border-t border-white/[.06] pt-3">
-                      <span className="text-xs text-white/35">
-                        {certification.issuer}
-                      </span>
-    
-                      {certification.date && (
-                        <span className="shrink-0 text-[10px] text-white/20">
-                          {certification.date}
-                        </span>
-                      )}
-                    </div>
-                  </motion.div>
-                )
-              )}
+      
+            <div className="hidden text-right sm:block">
+              <span className="text-3xl font-semibold text-cyan-300">
+                49
+              </span>
+      
+              <p className="text-xs text-white/30">
+                {language === "es" ? "total" : "in total"}
+              </p>
             </div>
-    
+          </div>
+      
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {additionalCertifications.map((certification, index) => (
+              <motion.div
+                key={`${certification.title}-${index}`}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: Math.min(index * 0.015, 0.35),
+                }}
+                whileHover={{ y: -4 }}
+                className="flex min-h-[150px] flex-col justify-between rounded-[20px] border border-white/[.07] bg-white/[.025] p-5 transition hover:border-cyan-300/20 hover:bg-white/[.04]"
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-[10px] uppercase tracking-[.18em] text-cyan-300/55">
+                      {certification.category}
+                    </span>
+      
+                    <BadgeCheck className="h-4 w-4 shrink-0 text-white/20" />
+                  </div>
+      
+                  <h4 className="mt-4 text-sm font-medium leading-5 text-white/75">
+                    {certification.title}
+                  </h4>
+                </div>
+      
+                <div className="mt-5 flex items-end justify-between gap-3 border-t border-white/[.06] pt-3">
+                  <span className="text-xs text-white/35">
+                    {certification.issuer}
+                  </span>
+      
+                  {certification.date && (
+                    <span className="shrink-0 text-[10px] text-white/20">
+                      {certification.date}
+                    </span>
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
-      )}
-    </AnimatePresence>
+      )} 
       
         {/* Botón ver todas */}
         <div className="mt-10 flex justify-center">
           <button
             type="button"
             onClick={() =>
-              setShowAllCertifications(!showAllCertifications)
-            }
-            className="flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[.06] px-6 py-3 text-sm font-medium text-cyan-200 transition hover:bg-cyan-300/10"
+          setShowAllCertifications(
+            (currentValue) => !currentValue
+          )
+        }
+        className="flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[.06] px-6 py-3 text-sm font-medium text-cyan-200 transition hover:bg-cyan-300/10"
           >
             {showAllCertifications
               ? t.certificationsShowLess

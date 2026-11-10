@@ -1,13 +1,19 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
-import { ArrowDown, CheckCircle2, Database, GraduationCap, Mail, MapPin, Menu, Sparkles, X } from "lucide-react";
+import { ArrowDown, Award, BadgeCheck, CheckCircle2, ChevronDown, ChevronUp, Database, ExternalLink, GraduationCap, Mail, MapPin, Menu, Sparkles, X,} from "lucide-react";
 
 const LINKEDIN = "https://www.linkedin.com/in/maxi-guti%C3%A9rrez-paulet/";
 const EMAIL = "maxi.gutierrez@gmail.com";
 
 const content = {
   es: {
-    nav: [["Perfil", "perfil"], ["Experiencia", "experiencia"], ["Stack", "stack"], ["Formación", "formacion"]],
+    nav: [
+      ["Perfil", "perfil"],
+      ["Experiencia", "experiencia"],
+      ["Stack", "stack"],
+      ["Formación", "formacion"],
+      ["Certificaciones", "certificaciones"],
+    ],
     heroEyebrow: "DATA · ANALYTICS · STRATEGY",
     heroTitle1: "Datos complejos.", heroTitle2: "Decisiones claras.",
     introBefore: "Soy",
@@ -45,7 +51,13 @@ const content = {
     ]
   },
   en: {
-    nav: [["Profile", "perfil"], ["Experience", "experiencia"], ["Stack", "stack"], ["Education", "formacion"]],
+    nav: [
+      ["Profile", "perfil"],
+      ["Experience", "experiencia"],
+      ["Stack", "stack"],
+      ["Education", "formacion"],
+      ["Certifications", "certificaciones"],
+    ],
     heroEyebrow: "DATA · ANALYTICS · STRATEGY",
     heroTitle1: "Complex data.", heroTitle2: "Clear decisions.",
     introBefore: "I am",
@@ -89,6 +101,7 @@ function App() {
   const [menu, setMenu] = useState(false);
   const [progress, setProgress] = useState(0);
   const [language, setLanguage] = useState("es");
+  const [showAllCertifications, setShowAllCertifications] = useState(false);
   const t = content[language];
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);

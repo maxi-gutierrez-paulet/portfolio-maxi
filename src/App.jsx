@@ -417,6 +417,7 @@ function App() {
   const [progress, setProgress] = useState(0);
   const [language, setLanguage] = useState("es");
   const [showAllCertifications, setShowAllCertifications] = useState(false);
+  const [certificationFilter, setCertificationFilter] = useState("Todas");
   const t = content[language];
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -450,6 +451,7 @@ function App() {
     </div>
   );
 
+  
   return (
     <main className="min-h-screen overflow-hidden bg-[#05070b] text-white selection:bg-cyan-300 selection:text-black">
       <div className="fixed left-0 top-0 z-[100] h-1 bg-gradient-to-r from-cyan-300 via-blue-500 to-violet-500" style={{ width: `${progress}%` }} />
@@ -503,7 +505,33 @@ function App() {
       </section>
 
       <section id="experiencia" className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10">
-        <p className="text-xs tracking-[.25em] text-cyan-300">{t.experienceLabel}</p><h2 className="mt-4 text-4xl font-semibold sm:text-5xl">{t.experienceTitle}</h2><div className="mt-12 grid gap-6 lg:grid-cols-[.42fr_.58fr]"><div className="space-y-3">{t.experience.map((item, index) => <button type="button" key={item.role} onClick={() => setSelected(index)} className={`w-full rounded-2xl border p-5 text-left transition ${selected === index ? "border-cyan-300/35 bg-white/[.08]" : "border-white/10 bg-white/[.025] hover:bg-white/[.05]"}`}><p className="font-medium">{item.role}</p><p className="mt-1 text-sm text-white/40">{item.company}</p><p className="mt-3 text-xs text-cyan-200/70">{item.period}</p></button>)}</div><AnimatePresence mode="wait"><motion.div key={`${language}-${selected}`} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="rounded-[28px] border border-white/10 bg-white/[.04] p-8"><p className="text-sm text-cyan-300">{t.experience[selected].company}</p><h3 className="mt-2 text-2xl font-medium">{t.experience[selected].role}</h3><p className="mt-6 leading-7 text-white/50">{t.experience[selected].summary}</p><div className="mt-7 space-y-3">{t.experience[selected].achievements.map((achievement) => <div key={achievement} className="flex gap-3 text-sm leading-6 text-white/65"><CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-300" /><span>{achievement}</span></div>)}</div><div className="mt-8 flex flex-wrap gap-2">{t.experience[selected].stack.map((technology) => <span key={technology} className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-xs text-white/45">{technology}</span>)}</div></motion.div></AnimatePresence></div>
+        <p className="text-xs tracking-[.25em] text-cyan-300">{t.experienceLabel}</p><h2 className="mt-4 text-4xl font-semibold sm:text-5xl">{t.experienceTitle}</h2><div className="mt-12 grid gap-6 lg:grid-cols-[.42fr_.58fr]"><div className="space-y-3">{t.experience.map((item, index) => <button type="button" key={item.role} onClick={() => setSelected(index)} className={`w-full rounded-2xl border p-5 text-left transition ${selected === index ? "border-cyan-300/35 bg-white/[.08]" : "border-white/10 bg-white/[.025] hover:bg-white/[.05]"}`}><p className="font-medium">{item.role}</p><p className="mt-1 text-sm text-white/40">{item.company}</p><p className="mt-3 text-xs text-cyan-200/70">{item.period}</p></button>)}</div><AnimatePresence mode="wait"><motion.div key={`${language}-${selected}`} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="rounded-[28px] border border-white/10 bg-white/[.04] p-8"><p className="text-sm text-cyan-300">{t.experience[selected].company}</p><h3 className="mt-2 text-2xl font-medium">{t.experience[selected].role}</h3><p className="mt-6 leading-7 text-white/50">{t.experience[selected].summary}</p><div className="mt-7 space-y-3">{t.experience[selected].achievements.map((achievement) => <div key={achievement} className="flex gap-3 text-sm leading-6 text-white/65"><CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-300" /><span>{achievement}</span></div>)}</div>
+          <div className="mt-8 flex flex-wrap gap-2">
+  {certificationCategories.map((category) => {
+    const active = certificationFilter === category.id;
+
+    return (
+      <button
+        type="button"
+        key={category.id}
+        onClick={() => {
+          setCertificationFilter(category.id);
+
+          if (category.id !== "Todas") {
+            setShowAllCertifications(true);
+          }
+        }}
+        className={`rounded-full border px-4 py-2 text-sm transition ${
+          active
+            ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-200"
+            : "border-white/10 bg-white/[.04] text-white/55 hover:border-cyan-300/25 hover:text-white"
+        }`}
+      >
+        {language === "es" ? category.es : category.en}
+      </button>
+    );
+  })}
+</div>
       </section>
 
       <section id="stack" className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10"><p className="text-xs tracking-[.25em] text-cyan-300">{t.stackLabel}</p><h2 className="mt-4 text-4xl font-semibold sm:text-5xl">{t.stackTitle}</h2><div className="mt-12 grid gap-4 sm:grid-cols-2">{t.skillGroups.map((group) => <motion.div key={group.title} whileHover={{ y: -6 }} className="rounded-[26px] border border-white/10 bg-white/[.04] p-7"><h3 className="text-xl font-medium">{group.title}</h3><div className="mt-7 flex flex-wrap gap-2">{group.items.map((skill) => <span key={skill} className="rounded-xl bg-white/[.06] px-3 py-2 text-sm text-white/55">{skill}</span>)}</div></motion.div>)}</div></section>
@@ -586,7 +614,7 @@ function App() {
           </div>
       
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {featuredCertifications.map((certification, index) => (
+           {filteredFeaturedCertifications.map((certification, index) => (
               <motion.div
                 key={certification.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -604,7 +632,7 @@ function App() {
                 </div>
       
                 <p className="text-xs uppercase tracking-[.18em] text-cyan-300/60">
-                  {certification.category}
+                 {certificationCategoryLabel(certification.category)}
                 </p>
       
                 <h4 className="mt-8 min-h-[72px] text-base font-medium leading-6 text-white/90">
@@ -635,15 +663,19 @@ function App() {
           <div className="mb-8 flex items-center justify-between">
             <div>
               <p className="text-xs uppercase tracking-[.2em] text-cyan-300/60">
-                {language === "es"
-                  ? "Portfolio de aprendizaje"
-                  : "Learning portfolio"}
+            {language === "es"
+              ? "Portfolio de aprendizaje"
+              : "Learning portfolio"}
               </p>
       
               <h3 className="mt-2 text-2xl font-medium">
-                {language === "es"
-                  ? "Todas las credenciales"
-                  : "All credentials"}
+          {language === "es"
+            ? certificationFilter === "Todas"
+              ? "Todas las credenciales"
+              : "Credenciales filtradas"
+            : certificationFilter === "Todas"
+              ? "All credentials"
+              : "Filtered credentials"}
               </h3>
       
               <p className="mt-2 text-sm text-white/35">
@@ -654,9 +686,9 @@ function App() {
             </div>
       
             <div className="hidden text-right sm:block">
-              <span className="text-3xl font-semibold text-cyan-300">
-                49
-              </span>
+            <span className="text-3xl font-semibold text-cyan-300">
+              {filteredTotal}
+            </span>
       
               <p className="text-xs text-white/30">
                 {language === "es" ? "total" : "in total"}
@@ -665,7 +697,7 @@ function App() {
           </div>
       
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {additionalCertifications.map((certification, index) => (
+            {filteredAdditionalCertifications.map((certification, index) => (
               <motion.div
                 key={`${certification.title}-${index}`}
                 initial={{ opacity: 0, y: 15 }}
@@ -680,7 +712,7 @@ function App() {
                 <div>
                   <div className="flex items-start justify-between gap-3">
                     <span className="text-[10px] uppercase tracking-[.18em] text-cyan-300/55">
-                      {certification.category}
+                      {certificationCategoryLabel(certification.category)}
                     </span>
       
                     <BadgeCheck className="h-4 w-4 shrink-0 text-white/20" />

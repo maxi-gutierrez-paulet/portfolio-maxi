@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
-import { ArrowDown, Award, BadgeCheck, CheckCircle2, ChevronDown, ChevronUp, Database, GraduationCap, Mail, MapPin, Menu, Sparkles, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, Award, BadgeCheck, CheckCircle2, ChevronDown, ChevronUp, Database, GraduationCap, Mail, MapPin, Menu, Quote, Sparkles, X } from "lucide-react";
 
 const LINKEDIN = "https://www.linkedin.com/in/maxi-guti%C3%A9rrez-paulet/";
 const EMAIL = "maxi.gutierrez@gmail.com";
@@ -60,9 +60,72 @@ const additionalCertifications = [
   { title: "Transición de jefe a líder", issuer: "LinkedIn", date: "Jun. 2019", category: "Liderazgo" },
 ];
 
+const recommendations = [
+  {
+    name: "Ariel Segovia Ponce",
+    role: "Senior Data Engineer / Data Platform",
+    relationshipEs: "Trabajó con Maxi en equipos distintos",
+    relationshipEn: "Worked with Maxi across different teams",
+    dateEs: "Octubre de 2026",
+    dateEn: "October 2026",
+    quoteEs: "Maxi tiene una gran capacidad para liderar proyectos de BI y análisis de datos. Destaca por su solvencia técnica con SQL y Power BI, el rigor en el diseño de modelos semánticos y su compromiso con la calidad, precisión y seguridad del dato.",
+    quoteEn: "Maxi has a strong ability to lead BI and data analysis projects. He stands out for his technical expertise in SQL and Power BI, his rigor in semantic model design, and his commitment to data quality, accuracy, and security.",
+    originalLanguage: "es",
+    url: "https://www.linkedin.com/in/arielsegoviaponce/",
+  },
+  {
+    name: "Shiv Rathour",
+    role: "Senior Data Strategy Manager at Sage",
+    relationshipEs: "Trabajó con Maxi en el mismo equipo",
+    relationshipEn: "Worked with Maxi on the same team",
+    dateEs: "Septiembre de 2025",
+    dateEn: "September 2025",
+    quoteEs: "Maxi aportó una sólida experiencia en datos de clientes y un profundo conocimiento del mercado español, añadiendo valor de forma constante a nuestros proyectos. Es analítico, colaborativo y siempre está dispuesto a compartir ideas que impulsan resultados.",
+    quoteEn: "Maxi brought strong expertise in customer data and a deep understanding of the Spanish market, which consistently added value to our projects. Maxi is analytical, collaborative, and always ready to share insights that drive results.",
+    originalLanguage: "en",
+    url: "https://www.linkedin.com/in/shivrathour83/",
+  },
+  {
+    name: "Fernando Galvache",
+    role: "CIO · Digital Transformation & AI",
+    relationshipEs: "Supervisó directamente a Maxi",
+    relationshipEn: "Directly managed Maxi",
+    dateEs: "Noviembre de 2024",
+    dateEn: "November 2024",
+    quoteEs: "Maxi ha demostrado ser una persona extremadamente comprometida, con una gran capacidad para adaptarse y afrontar nuevos desafíos. Siempre cumple con sus compromisos, aporta soluciones innovadoras y su capacidad para liderar y trabajar en equipo lo hace indispensable en cualquier entorno profesional.",
+    quoteEn: "Maxi has shown exceptional commitment and a strong ability to adapt and take on new challenges. He consistently delivers on his commitments, brings innovative solutions, and his leadership and teamwork make him a valuable contributor in any professional environment.",
+    originalLanguage: "es",
+    url: "https://www.linkedin.com/in/fernando-galvache/",
+  },
+  {
+    name: "Isabel Victoria García",
+    role: "Marketing & Channel Demand Generation",
+    relationshipEs: "Trabajó con Maxi en equipos distintos",
+    relationshipEn: "Worked with Maxi across different teams",
+    dateEs: "Febrero de 2025",
+    dateEn: "February 2025",
+    quoteEs: "Maxi es una persona muy válida y con mucha experiencia en el análisis de información. Su predisposición a ayudarnos con los análisis de datos de marketing en un tiempo récord nos permitió lanzar campañas a tiempo.",
+    quoteEn: "Maxi is a highly capable professional with extensive experience in information analysis. His willingness to support our marketing data analysis in record time enabled us to launch campaigns on schedule.",
+    originalLanguage: "es",
+    url: "https://www.linkedin.com/in/mariaisabelvictoria/",
+  },
+  {
+    name: "Juan A. Andújar",
+    role: "Business Development, Growth & Partnerships",
+    relationshipEs: "Trabajó con Maxi en equipos distintos",
+    relationshipEn: "Worked with Maxi across different teams",
+    dateEs: "Enero de 2024",
+    dateEn: "January 2024",
+    quoteEs: "El nivel de confianza que puedes depositar en Maxi es infinito. Solo hay que explicarle el objetivo: monta un plan y lo ejecuta. Está continuamente aprendiendo, lo que le mantiene al corriente de las novedades.",
+    quoteEn: "The level of trust you can place in Maxi is exceptional. Explain the objective and he will build a plan and execute it. He is continuously learning, which keeps him up to date with new developments.",
+    originalLanguage: "es",
+    url: "https://www.linkedin.com/in/juan-a-andujar/",
+  },
+];
+
 const content = {
   es: {
-    nav: [["Perfil", "perfil"], ["Experiencia", "experiencia"], ["Stack", "stack"], ["Formación", "formacion"], ["Certificaciones", "certificaciones"]],
+    nav: [["Perfil", "perfil"], ["Experiencia", "experiencia"], ["Stack", "stack"], ["Formación", "formacion"], ["Certificaciones", "certificaciones"], ["Recomendaciones", "recomendaciones"]],
     heroEyebrow: "DATA · ANALYTICS · STRATEGY", heroTitle1: "Datos complejos.", heroTitle2: "Decisiones claras.",
     introBefore: "Soy", introAfter: "Data Analyst Senior especializado en inteligencia de datos, Power BI y transformación de información en valor para el negocio.",
     explore: "Explorar trayectoria", contact: "Contactar", location: "Madrid", experienceYears: "+20 años de experiencia", focus: "BI · Datos · Calidad",
@@ -72,7 +135,7 @@ const content = {
     stats: [["20+", "años de experiencia"], ["40%", "menos tiempo de análisis"], ["20", "personas lideradas"]],
     experienceLabel: "02 · EXPERIENCIA", experienceTitle: "Una trayectoria para explorar.", stackLabel: "03 · STACK", stackTitle: "Tecnología aplicada a problemas reales.", educationLabel: "04 · FORMACIÓN", educationTitle: "Aprendizaje continuo.",
     certificationsLabel: "05 · LICENCIAS Y CERTIFICACIONES", certificationsTitle: "Aprendizaje continuo, aplicado a la práctica.", certificationsIntro: "49 credenciales que refuerzan mi trayectoria en Data & BI, tecnología, gestión de proyectos, marketing digital y liderazgo.", certificationsCountLabel: "credenciales", certificationsFeatured: "Credenciales destacadas", certificationsShowAll: "Explorar las 49 credenciales", certificationsShowLess: "Mostrar solo las destacadas",
-    learningPortfolio: "Portfolio de aprendizaje", allCredentials: "Todas las credenciales", filteredCredentials: "Credenciales filtradas", total: "total", noResults: "No hay credenciales en esta categoría.",
+    recommendationsLabel: "06 · RECOMENDACIONES", recommendationsTitle: "Lo que dicen quienes han trabajado conmigo.", recommendationsIntro: "Cinco perspectivas sobre mi forma de trabajar, liderar, analizar y convertir necesidades en resultados.", recommendationOriginalEs: "Recomendación original en español", recommendationTranslatedEn: "English translation of a recommendation originally written in Spanish", recommendationViewProfile: "Ver perfil en LinkedIn", recommendationPrevious: "Recomendación anterior", recommendationNext: "Siguiente recomendación", learningPortfolio: "Portfolio de aprendizaje", allCredentials: "Todas las credenciales", filteredCredentials: "Credenciales filtradas", total: "total", noResults: "No hay credenciales en esta categoría.",
     talk: "¿Hablamos?", contactTitle: "Convirtamos información en decisiones que generen valor.", openMenu: "Abrir menú", closeMenu: "Cerrar menú",
     experience: [
       { company: "Universidad Alfonso X el Sabio (UAX)", role: "Data Analyst", period: "Nov. 2025 · Actualidad", summary: "Reporting institucional, calidad del dato y soluciones analíticas para convertir necesidades funcionales en información fiable y útil para la gestión.", achievements: ["Diseño y despliegue de dashboards institucionales en Power BI.", "Definición y unificación de KPIs para acreditación, rankings y seguimiento académico.", "Modelos analíticos para Medicina, Enfermería y Veterinaria.", "Integración de Salesforce, Oracle, SQL Server, Azure, ERP y SharePoint.", "Automatización mediante Dataflows, Power Query y procesos ETL.", "Colaboración entre TI, Calidad y áreas de negocio mediante Agile y JIRA."], stack: ["Power BI", "DAX", "Oracle", "SQL Server", "Azure", "Salesforce", "Power Query"] },
@@ -95,7 +158,7 @@ const content = {
     ]
   },
   en: {
-    nav: [["Profile", "perfil"], ["Experience", "experiencia"], ["Stack", "stack"], ["Education", "formacion"], ["Certifications", "certificaciones"]],
+    nav: [["Profile", "perfil"], ["Experience", "experiencia"], ["Stack", "stack"], ["Education", "formacion"], ["Certifications", "certificaciones"], ["Recommendations", "recomendaciones"]],
     heroEyebrow: "DATA · ANALYTICS · STRATEGY", heroTitle1: "Complex data.", heroTitle2: "Clear decisions.",
     introBefore: "I am", introAfter: "a Senior Data Analyst specializing in data intelligence, Power BI, and turning information into business value.",
     explore: "Explore my career", contact: "Contact me", location: "Madrid", experienceYears: "20+ years of experience", focus: "BI · Data · Quality",
@@ -105,7 +168,7 @@ const content = {
     stats: [["20+", "years of experience"], ["40%", "less analysis time"], ["20", "people managed"]],
     experienceLabel: "02 · EXPERIENCE", experienceTitle: "A career path to explore.", stackLabel: "03 · STACK", stackTitle: "Technology applied to real business challenges.", educationLabel: "04 · EDUCATION", educationTitle: "Continuous learning.",
     certificationsLabel: "05 · LICENSES & CERTIFICATIONS", certificationsTitle: "Continuous learning, applied in practice.", certificationsIntro: "49 credentials supporting my experience across Data & BI, technology, project management, digital marketing, and leadership.", certificationsCountLabel: "credentials", certificationsFeatured: "Featured credentials", certificationsShowAll: "Explore all 49 credentials", certificationsShowLess: "Show featured credentials only",
-    learningPortfolio: "Learning portfolio", allCredentials: "All credentials", filteredCredentials: "Filtered credentials", total: "in total", noResults: "There are no credentials in this category.",
+    recommendationsLabel: "06 · RECOMMENDATIONS", recommendationsTitle: "What people I have worked with say.", recommendationsIntro: "Five perspectives on how I work, lead, analyze, and turn business needs into results.", recommendationOriginalEs: "Original recommendation in Spanish", recommendationTranslatedEn: "English translation of a recommendation originally written in Spanish", recommendationViewProfile: "View LinkedIn profile", recommendationPrevious: "Previous recommendation", recommendationNext: "Next recommendation", learningPortfolio: "Learning portfolio", allCredentials: "All credentials", filteredCredentials: "Filtered credentials", total: "in total", noResults: "There are no credentials in this category.",
     talk: "Let's talk", contactTitle: "Let's turn information into decisions that create value.", openMenu: "Open menu", closeMenu: "Close menu",
     experience: [
       { company: "Universidad Alfonso X el Sabio (UAX)", role: "Data Analyst", period: "Nov. 2025 · Present", summary: "Institutional reporting, data quality, and analytical solutions that turn functional requirements into reliable information for decision-making.", achievements: ["Designed and deployed institutional Power BI dashboards.", "Defined and standardized KPIs for accreditation, rankings, and academic monitoring.", "Built analytical models for Medicine, Nursing, and Veterinary Science.", "Integrated Salesforce, Oracle, SQL Server, Azure, ERP, and SharePoint data.", "Automated reporting through Dataflows, Power Query, and ETL processes.", "Worked across IT, Quality, and business teams using Agile and JIRA."], stack: ["Power BI", "DAX", "Oracle", "SQL Server", "Azure", "Salesforce", "Power Query"] },
@@ -136,6 +199,7 @@ function App() {
   const [language, setLanguage] = useState("es");
   const [showAllCertifications, setShowAllCertifications] = useState(false);
   const [certificationFilter, setCertificationFilter] = useState("Todas");
+  const [recommendationIndex, setRecommendationIndex] = useState(0);
   const t = content[language];
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -219,6 +283,73 @@ function App() {
         {(showAllCertifications || certificationFilter !== "Todas") && <motion.div key={certificationFilter} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-10 border-t border-white/10 pt-10"><div className="mb-8 flex items-center justify-between"><div><p className="text-xs uppercase tracking-[.2em] text-cyan-300/60">{t.learningPortfolio}</p><h3 className="mt-2 text-2xl font-medium">{certificationFilter === "Todas" ? t.allCredentials : t.filteredCredentials}</h3></div><div className="hidden text-right sm:block"><span className="text-3xl font-semibold text-cyan-300">{filteredTotal}</span><p className="text-xs text-white/30">{t.total}</p></div></div>{filteredTotal > 0 ? <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{filteredAllCertifications.map((certification, index) => <motion.div key={`${certification.title}-${index}`} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: Math.min(index * 0.015, 0.35) }} whileHover={{ y: -4 }} className="flex min-h-[150px] flex-col justify-between rounded-[20px] border border-white/[.07] bg-white/[.025] p-5 transition hover:border-cyan-300/20 hover:bg-white/[.04]"><div><div className="flex items-start justify-between gap-3"><span className="text-[10px] uppercase tracking-[.18em] text-cyan-300/55">{certificationCategoryLabel(certification.category)}</span><BadgeCheck className="h-4 w-4 shrink-0 text-white/20" /></div><h4 className="mt-4 text-sm font-medium leading-5 text-white/75">{certification.title}</h4></div><div className="mt-5 flex items-end justify-between gap-3 border-t border-white/[.06] pt-3"><span className="text-xs text-white/35">{certification.issuer}</span>{certification.date && <span className="shrink-0 text-[10px] text-white/20">{certification.date}</span>}</div></motion.div>)}</div> : <p className="rounded-2xl border border-white/10 bg-white/[.03] p-6 text-white/45">{t.noResults}</p>}</motion.div>}
 
         <div className="mt-10 flex justify-center"><button type="button" onClick={() => { setCertificationFilter("Todas"); setShowAllCertifications((value) => !value); }} className="flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[.06] px-6 py-3 text-sm font-medium text-cyan-200 transition hover:bg-cyan-300/10">{showAllCertifications && certificationFilter === "Todas" ? t.certificationsShowLess : t.certificationsShowAll}{showAllCertifications && certificationFilter === "Todas" ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}</button></div>
+      </section>
+
+      <section id="recomendaciones" className="relative z-10 mx-auto max-w-7xl px-6 py-28 lg:px-10">
+        <p className="text-xs tracking-[.25em] text-cyan-300">{t.recommendationsLabel}</p>
+        <div className="mt-4 grid gap-10 lg:grid-cols-[.65fr_1.35fr]">
+          <div>
+            <h2 className="max-w-xl text-4xl font-semibold tracking-tight sm:text-5xl">{t.recommendationsTitle}</h2>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-white/50">{t.recommendationsIntro}</p>
+            <div className="mt-8 flex items-center gap-3">
+              <span className="text-5xl font-semibold text-cyan-300">05</span>
+              <span className="max-w-[150px] text-xs uppercase tracking-[.2em] text-white/35">{language === "es" ? "testimonios profesionales" : "professional testimonials"}</span>
+            </div>
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.article
+              key={`${language}-${recommendationIndex}`}
+              initial={{ opacity: 0, x: 28 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -28 }}
+              transition={{ duration: 0.35 }}
+              className="relative overflow-hidden rounded-[34px] border border-white/10 bg-gradient-to-br from-white/[.08] to-white/[.02] p-8 shadow-[0_30px_90px_rgba(34,211,238,.08)] sm:p-10"
+            >
+              <Quote className="absolute right-8 top-8 h-14 w-14 text-cyan-300/10" />
+              <div className="relative z-10">
+                <p className="text-xs uppercase tracking-[.2em] text-cyan-300/65">
+                  {language === "en" && recommendations[recommendationIndex].originalLanguage === "es"
+                    ? t.recommendationTranslatedEn
+                    : language === "es" && recommendations[recommendationIndex].originalLanguage === "en"
+                      ? "Traducción al español de una recomendación original en inglés"
+                      : language === "es"
+                        ? t.recommendationOriginalEs
+                        : "Original recommendation in English"}
+                </p>
+                <blockquote className="mt-8 text-xl font-medium leading-9 text-white/85 sm:text-2xl sm:leading-10">
+                  “{language === "es" ? recommendations[recommendationIndex].quoteEs : recommendations[recommendationIndex].quoteEn}”
+                </blockquote>
+                <div className="mt-10 border-t border-white/10 pt-6 sm:flex sm:items-end sm:justify-between">
+                  <div>
+                    <p className="text-lg font-medium text-white">{recommendations[recommendationIndex].name}</p>
+                    <p className="mt-1 text-sm text-cyan-200/70">{recommendations[recommendationIndex].role}</p>
+                    <p className="mt-3 text-xs text-white/30">
+                      {language === "es" ? recommendations[recommendationIndex].relationshipEs : recommendations[recommendationIndex].relationshipEn}
+                      <span className="mx-2">·</span>
+                      {language === "es" ? recommendations[recommendationIndex].dateEs : recommendations[recommendationIndex].dateEn}
+                    </p>
+                  </div>
+                  <a href={recommendations[recommendationIndex].url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm text-cyan-300 transition hover:text-cyan-200 sm:mt-0">
+                    {t.recommendationViewProfile} ↗
+                  </a>
+                </div>
+                <div className="mt-8 flex flex-col gap-5 border-t border-white/[.07] pt-6 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex gap-2">
+                    {recommendations.map((recommendation, index) => (
+                      <button key={recommendation.name} type="button" onClick={() => setRecommendationIndex(index)} aria-label={`${language === "es" ? "Mostrar recomendación" : "Show recommendation"} ${index + 1}`} className={`h-2 rounded-full transition-all ${recommendationIndex === index ? "w-8 bg-cyan-300" : "w-2 bg-white/20 hover:bg-white/40"}`} />
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="mr-2 text-xs text-white/30">{String(recommendationIndex + 1).padStart(2, "0")} / {String(recommendations.length).padStart(2, "0")}</span>
+                    <button type="button" onClick={() => setRecommendationIndex((recommendationIndex - 1 + recommendations.length) % recommendations.length)} aria-label={t.recommendationPrevious} className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[.04] transition hover:border-cyan-300/30 hover:text-cyan-300"><ArrowLeft className="h-4 w-4" /></button>
+                    <button type="button" onClick={() => setRecommendationIndex((recommendationIndex + 1) % recommendations.length)} aria-label={t.recommendationNext} className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/[.08] text-cyan-200 transition hover:bg-cyan-300/15"><ArrowRight className="h-4 w-4" /></button>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          </AnimatePresence>
+        </div>
       </section>
 
       <section className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-10"><div className="rounded-[36px] border border-cyan-300/15 bg-gradient-to-r from-cyan-300/15 via-blue-500/10 to-violet-500/15 p-9 sm:p-14"><p className="text-sm text-cyan-200">{t.talk}</p><h2 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">{t.contactTitle}</h2><div className="mt-8 flex flex-wrap gap-3"><a href={`mailto:${EMAIL}`} className="flex items-center rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-cyan-200"><Mail className="mr-2 h-4 w-4" />{t.contact}</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/20 bg-black/10 px-6 py-3 transition hover:bg-white/10">LinkedIn ↗</a></div></div></section>

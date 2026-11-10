@@ -163,6 +163,254 @@ const content = {
         category: "Agile",
       },
     ];
+    const additionalCertifications = [
+      {
+        title: "El discurso de ascensor",
+        issuer: "GoodHabitz",
+        date: "Feb. 2026",
+        category: "Comunicación",
+      },
+      {
+        title: "Power BI: Analizar datos combinando fácilmente las consultas",
+        issuer: "LinkedIn",
+        date: "Oct. 2025",
+        category: "Data & BI",
+      },
+      {
+        title: "Depura el Código: Python y Pandas",
+        issuer: "LinkedIn",
+        date: "Sept. 2025",
+        category: "Desarrollo",
+      },
+      {
+        title: "Introducción al examen PL-300: Microsoft Power BI Data Analyst",
+        issuer: "LinkedIn",
+        date: "Sept. 2025",
+        category: "Power BI",
+      },
+      {
+        title: "Aprende Power BI",
+        issuer: "LinkedIn",
+        date: "Sept. 2025",
+        category: "Power BI",
+      },
+      {
+        title: "ADGG102PO Business Intelligence",
+        issuer: "Femxa",
+        date: "Jun. 2022",
+        category: "Data & BI",
+      },
+      {
+        title: "Analítica Web para medir resultados de Marketing",
+        issuer: "ANDRAGO",
+        date: "Mar. 2024",
+        category: "Marketing",
+      },
+      {
+        title: "Trailhead by Salesforce",
+        issuer: "Salesforce",
+        date: "",
+        category: "Tecnología",
+      },
+      {
+        title: "Aprende Google Tag Manager",
+        issuer: "LinkedIn",
+        date: "Sept. 2024",
+        category: "Marketing",
+      },
+      {
+        title: "Copilot in Excel: Supercharge Your Productivity",
+        issuer: "LinkedIn",
+        date: "Sept. 2024",
+        category: "IA",
+      },
+      {
+        title: "Power BI Quick Tips",
+        issuer: "LinkedIn",
+        date: "Feb. 2024",
+        category: "Power BI",
+      },
+      {
+        title: "IFC363_3 - Administración y programación en sistemas ERP y CRM",
+        issuer: "Consejería de Economía, Hacienda y Empleo",
+        date: "Mar. 2023",
+        category: "Tecnología",
+      },
+      {
+        title: "Enseñanza de inglés como lengua extranjera (TEFL)",
+        issuer: "Twenix",
+        date: "Oct. 2022",
+        category: "Idiomas",
+      },
+      {
+        title: "Especialización en Facebook Ads",
+        issuer: "thePower",
+        date: "Ene. 2023",
+        category: "Marketing",
+      },
+      {
+        title: "Especialización Google Ads",
+        issuer: "thePower",
+        date: "Dic. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Especialización Copy Writing",
+        issuer: "thePower",
+        date: "Nov. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Especialización Content Marketing",
+        issuer: "thePower",
+        date: "Nov. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Especialización Trabajar con Agencias",
+        issuer: "thePower",
+        date: "Nov. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Especialización CMO",
+        issuer: "thePower",
+        date: "Nov. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Salesforce esencial",
+        issuer: "LinkedIn",
+        date: "Nov. 2022",
+        category: "Tecnología",
+      },
+      {
+        title: "Especialización Analítica - Google Analytics",
+        issuer: "thePower",
+        date: "Nov. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Growth Hacking Specialization",
+        issuer: "thePower",
+        date: "Nov. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Marketing Influencer Specialization",
+        issuer: "thePower",
+        date: "Oct. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Tableau: Domina todos los gráficos",
+        issuer: "LinkedIn",
+        date: "Oct. 2022",
+        category: "Data & BI",
+      },
+      {
+        title: "Tableau esencial",
+        issuer: "LinkedIn",
+        date: "Oct. 2022",
+        category: "Data & BI",
+      },
+      {
+        title: "Especialización en Social Media",
+        issuer: "thePower",
+        date: "Oct. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Especialización en Aspectos Legales",
+        issuer: "thePower",
+        date: "Oct. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "SEO Especialización",
+        issuer: "thePower",
+        date: "Jul. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "The Power Digital Marketing",
+        issuer: "thePower",
+        date: "Jul. 2022",
+        category: "Marketing",
+      },
+      {
+        title: "Data Science",
+        issuer: "thePower",
+        date: "Mar. 2022",
+        category: "Data",
+      },
+      {
+        title: "Agile & HBPS",
+        issuer: "thePower",
+        date: "Feb. 2022",
+        category: "Agile",
+      },
+      {
+        title: "Python esencial (2014)",
+        issuer: "LinkedIn",
+        date: "Ene. 2022",
+        category: "Desarrollo",
+      },
+      {
+        title: "Power BI esencial (2018)",
+        issuer: "LinkedIn",
+        date: "Ene. 2022",
+        category: "Power BI",
+      },
+      {
+        title: "Visual Studio Team Services esencial",
+        issuer: "LinkedIn",
+        date: "Ene. 2022",
+        category: "Desarrollo",
+      },
+      {
+        title: "Business Intelligence con Power BI Desktop, Service y Mobile",
+        issuer: "Randstad",
+        date: "Nov. 2020",
+        category: "Data & BI",
+      },
+      {
+        title: "Power BI para principiantes: Análisis de datos",
+        issuer: "LinkedIn",
+        date: "Oct. 2019",
+        category: "Power BI",
+      },
+      {
+        title: "Aprende SCRUM",
+        issuer: "LinkedIn",
+        date: "Jun. 2019",
+        category: "Agile",
+      },
+      {
+        title: "Aprende MySQL",
+        issuer: "LinkedIn",
+        date: "May. 2016",
+        category: "Desarrollo",
+      },
+      {
+        title: "Personal Branding on Social Media",
+        issuer: "LinkedIn",
+        date: "May. 2016",
+        category: "Marketing",
+      },
+      {
+        title: "Cómo delegar tareas en la empresa",
+        issuer: "LinkedIn",
+        date: "Mar. 2018",
+        category: "Liderazgo",
+      },
+      {
+        title: "Transición de jefe a líder",
+        issuer: "LinkedIn",
+        date: "Jun. 2019",
+        category: "Liderazgo",
+      },
+    ];
 function App() {
   const [selected, setSelected] = useState(0);
   const [menu, setMenu] = useState(false);
@@ -376,6 +624,87 @@ function App() {
             ))}
           </div>
         </div>
+
+            <AnimatePresence>
+      {showAllCertifications && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.5 }}
+          className="overflow-hidden"
+        >
+          <div className="mt-6 border-t border-white/10 pt-10">
+    
+            <div className="mb-8 flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[.2em] text-cyan-300/60">
+                  Portfolio de aprendizaje
+                </p>
+    
+                <h3 className="mt-2 text-2xl font-medium">
+                  Todas las credenciales
+                </h3>
+              </div>
+    
+              <div className="hidden text-right sm:block">
+                <span className="text-3xl font-semibold text-cyan-300">
+                  49
+                </span>
+    
+                <p className="text-xs text-white/30">
+                  total
+                </p>
+              </div>
+            </div>
+    
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {additionalCertifications.map(
+                (certification, index) => (
+                  <motion.div
+                    key={certification.title}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: Math.min(index * 0.02, 0.4),
+                    }}
+                    className="flex min-h-[150px] flex-col justify-between rounded-[20px] border border-white/[.07] bg-white/[.025] p-5 transition hover:border-cyan-300/20 hover:bg-white/[.04]"
+                  >
+                    <div>
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="text-[10px] uppercase tracking-[.18em] text-cyan-300/55">
+                          {certification.category}
+                        </span>
+    
+                        <BadgeCheck className="h-4 w-4 shrink-0 text-white/20" />
+                      </div>
+    
+                      <h4 className="mt-4 text-sm font-medium leading-5 text-white/75">
+                        {certification.title}
+                      </h4>
+                    </div>
+    
+                    <div className="mt-5 flex items-end justify-between gap-3 border-t border-white/[.06] pt-3">
+                      <span className="text-xs text-white/35">
+                        {certification.issuer}
+                      </span>
+    
+                      {certification.date && (
+                        <span className="shrink-0 text-[10px] text-white/20">
+                          {certification.date}
+                        </span>
+                      )}
+                    </div>
+                  </motion.div>
+                )
+              )}
+            </div>
+    
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
       
         {/* Botón ver todas */}
         <div className="mt-10 flex justify-center">

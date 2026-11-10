@@ -1,3 +1,4 @@
+// Portfolio Maxi - versión final
 import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { ArrowDown, ArrowLeft, ArrowRight, Award, BadgeCheck, CheckCircle2, ChevronDown, ChevronUp, Database, Download, GraduationCap, Mail, MapPin, Menu, Quote, Sparkles, X } from "lucide-react";

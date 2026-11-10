@@ -14,7 +14,7 @@ const content = {
     introAfter: "Data Analyst Senior especializado en inteligencia de datos, Power BI y transformación de información en valor para el negocio.",
     explore: "Explorar trayectoria", contact: "Contactar", location: "Madrid",
     experienceYears: "+20 años de experiencia", focus: "BI · Datos · Calidad",
-    profileCard: "PERFIL / 2026", role: "Data Analyst Senior",
+    profileCard: "PERFIL / DATA ANALYST", role: "Data Analyst Senior",
     profileLabel: "01 · PERFIL", profileTitle: "El dato como herramienta de transformación.",
     profileP1: "Mi trayectoria se ha desarrollado en torno al análisis de datos, la inteligencia de negocio y la gestión de información estratégica. Combino visión funcional, capacidad analítica y conocimiento técnico.",
     profileP2: "He trabajado con áreas académicas, comerciales, financieras, de calidad y tecnología, transformando necesidades en información fiable y accionable.",
@@ -52,7 +52,7 @@ const content = {
     introAfter: "a Senior Data Analyst specializing in data intelligence, Power BI, and turning information into business value.",
     explore: "Explore my career", contact: "Contact me", location: "Madrid",
     experienceYears: "20+ years of experience", focus: "BI · Data · Quality",
-    profileCard: "PROFILE / 2026", role: "Senior Data Analyst",
+    profileCard: "PROFILE / DATA ANALYST", role: "Senior Data Analyst",
     profileLabel: "01 · PROFILE", profileTitle: "Data as a driver of transformation.",
     profileP1: "My career has focused on data analysis, business intelligence, and strategic information management. I combine functional vision, analytical skills, and technical expertise.",
     profileP2: "I have worked with academic, commercial, financial, quality, and technology teams, transforming business needs into reliable and actionable information.",
@@ -157,12 +157,12 @@ function App() {
             <div className="relative z-20 flex justify-between text-xs tracking-[.2em] text-white/35" style={{ transform: "translateZ(35px)" }}><span>{t.profileCard}</span><Database className="h-5 w-5 text-cyan-300" /></div>
             <div className="pointer-events-none absolute left-4 top-16 h-56 w-56 rounded-full bg-cyan-400/10 blur-[70px]" />
             <div className="relative z-10 mt-7 flex items-center gap-5" style={{ transform: "translateZ(55px)" }}>
-              <div className="relative h-48 w-36 shrink-0 overflow-hidden rounded-[28px] border border-cyan-300/30 bg-cyan-300/10 shadow-[0_20px_60px_rgba(34,211,238,.22)]">
+              <div className="relative h-52 w-40 shrink-0 overflow-hidden rounded-[28px] border border-cyan-300/30 bg-cyan-300/10 shadow-[0_20px_60px_rgba(34,211,238,.22)]">
                 <img src="/maxi-profile.png" alt={language === "es" ? "Retrato profesional de Maxi Gutiérrez Paulet" : "Professional portrait of Maxi Gutiérrez Paulet"} className="h-full w-full object-cover object-top" />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071016]/55 via-transparent to-transparent" />
                 <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-inset ring-cyan-200/10" />
               </div>
-              <div className="min-w-0"><h2 className="text-2xl font-medium leading-tight text-white">Business Intelligence<br /><span className="text-cyan-200">&amp; Data Analytics</span></h2><p className="mt-4 text-sm font-medium text-white/55">{t.role}</p><p className="mt-2 text-xs leading-5 text-white/35">Power BI · SQL · Data Strategy<br />AI-assisted Analytics</p></div>
+              <div className="min-w-0"><h2 className="text-2xl font-medium leading-tight text-white">Business Intelligence<br /><span className="text-cyan-200">&amp; Data Analytics</span></h2><p className="mt-4 text-sm font-medium text-white/55">{t.role}</p><p className="mt-2 text-xs leading-5 text-white/35">Power BI · SQL · Data Strategy<br />AI-assisted Data Analytics</p></div>
             </div>
             <div className="relative z-20 mt-7 grid grid-cols-3 gap-2" style={{ transform: "translateZ(40px)" }}>{["Power BI", "DAX", "SQL"].map((technology) => <span key={technology} className="rounded-xl border border-white/10 bg-black/25 px-3 py-3 text-center text-xs text-white/65 backdrop-blur">{technology}</span>)}</div>
             <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-cyan-950/15 to-transparent" />

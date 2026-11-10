@@ -28,6 +28,15 @@ const content = {
     experienceLabel: "02 · EXPERIENCIA", experienceTitle: "Una trayectoria para explorar.",
     stackLabel: "03 · STACK", stackTitle: "Tecnología aplicada a problemas reales.",
     educationLabel: "04 · FORMACIÓN", educationTitle: "Aprendizaje continuo.",
+    certificationsLabel: "05 · LICENCIAS Y CERTIFICACIONES",
+    certificationsTitle: "Aprendizaje continuo, aplicado a la práctica.",
+    certificationsIntro:
+      "49 credenciales que refuerzan mi trayectoria en Data & BI, tecnología, gestión de proyectos, marketing digital y liderazgo.",
+    certificationsCount: "49",
+    certificationsCountLabel: "credenciales",
+    certificationsFeatured: "Credenciales destacadas",
+    certificationsShowAll: "Explorar las 49 credenciales",
+    certificationsShowLess: "Mostrar solo las destacadas",
     talk: "¿Hablamos?", contactTitle: "Convirtamos información en decisiones que generen valor.",
     openMenu: "Abrir menú", closeMenu: "Cerrar menú",
     experience: [
@@ -72,6 +81,15 @@ const content = {
     experienceLabel: "02 · EXPERIENCE", experienceTitle: "A career path to explore.",
     stackLabel: "03 · STACK", stackTitle: "Technology applied to real business challenges.",
     educationLabel: "04 · EDUCATION", educationTitle: "Continuous learning.",
+    certificationsLabel: "05 · LICENSES & CERTIFICATIONS",
+    certificationsTitle: "Continuous learning, applied in practice.",
+    certificationsIntro:
+      "49 credentials supporting my experience across Data & BI, technology, project management, digital marketing, and leadership.",
+    certificationsCount: "49",
+    certificationsCountLabel: "credentials",
+    certificationsFeatured: "Featured credentials",
+    certificationsShowAll: "Explore all 49 credentials",
+    certificationsShowLess: "Show featured credentials only",
     talk: "Let's talk", contactTitle: "Let's turn information into decisions that create value.",
     openMenu: "Open menu", closeMenu: "Close menu",
     experience: [
